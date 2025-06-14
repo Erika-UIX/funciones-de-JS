@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="COVID19, pandemia, medidas sanitarias, educación">
+    <meta name="description" content="Esta web está orientada al análisis del Impacto del COVID en la sociedad">
+    <meta name="language" content="es">
+    <title>Impacto del COVID</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/logo_icon.png" type="image/x-icon">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('La página del impacto del COVID ha cargado completamente.');
+        });
+        function convertirCasos() {
+            const casosEnCientos = Number(document.getElementById('casosInput').value);
+            if (isNaN(casosEnCientos) || casosEnCientos < 0) {
+                document.getElementById('resultadoConversion').textContent = 'Por favor, introduce un número válido y no negativo.';
+                return; 
+            }
+            const casosReales = casosEnCientos * 100;
+            document.getElementById('resultadoConversion').textContent = `Esto representa aproximadamente ${casosReales.toLocaleString()} casos de COVID.`;
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <section class="encabezado">
+            <video src="video/video_corto0.mp4" autoplay loop muted></video>
+            <h1>
+                COVID EN LA SOCIEDAD
+            </h1>
+        </section>
+        <nav class="menu-encabezado"> 
+            <a class="activo" href="#">Inicio</a>
+            <a href="noticias.html">Noticias</a>
+            <a href="mortandad.html">Mortandad</a>
+        </nav>
+    </header>
+    <main>
+        <section class="alerta-seccion">
+            <h2>Datos Importantes</h2>
+            <p id="parrafoAlerta">
+                La información sobre el COVID-19 evoluciona constantemente. Siempre busca fuentes confiables.
+            </p>
+        </section> 
+        <script>
+        const parrafoAlerta = document.getElementById('parrafoAlerta');
+        parrafoAlerta.addEventListener('mouseover', () => {
+            parrafoAlerta.style.color = 'red';
+        });
+        parrafoAlerta.addEventListener('mouseout', () => {
+            parrafoAlerta.style.color = '#333'; 
+        });
+        </script>
+        <section>
+            <h2>
+                Introducción
+            </h2>
+            <p>
+                La pandemia de COVID-19 ha tenido un impacto profundo
+                y duradero en la sociedad a nivel mundial.
+            </p>
+            <p>
+                Desde su aparición a finales de 2019, el virus
+                ha afectado no solo la salud física de millones
+                de personas, sino también la economía,
+                la educación, y las relaciones sociales.
+            </p>
+        </section>
+
+        <video controls width="100%">
+            <source src="video/video_corto1.mp4" type="video/mp4">
+            Tu navegador no soporta el vídeo. 
+        </video>
+    </main>
+    <footer>
+        <nav> 
+            <a class="activo" href="#">Inicio</a>
+            <a href="noticias.html">Noticias</a>
+            <a href="mortandad.html">Mortandad</a>
+        </nav>
+        <section>
+            <h2>ALGUNAS RECOMENDACIONES:</h2>
+            <button id="toggleRecomendaciones">Ocultar Recomendaciones</button>
+            <img src="img/coronavirus_recomendaciones.png" alt="Recomendaciones del sitio.">            
+        </section>
+        <p>
+            &copy; 2025 COVID-19 y su impacto en la sociedad. Todos los derechos reservados.
+        </p>
+    </footer>
+    <script>
+        const imagenRecomendaciones = document.querySelector('footer section img');
+        const botonToggle = document.getElementById('toggleRecomendaciones');
+
+        botonToggle.addEventListener('click', () => {
+            if (imagenRecomendaciones.style.display === 'none') {
+                imagenRecomendaciones.style.display = 'block'; 
+                botonToggle.textContent = 'Ocultar Recomendaciones';
+            } else {
+                imagenRecomendaciones.style.display = 'none'; 
+                botonToggle.textContent = 'Mostrar Recomendaciones';
+            }
+        });        
+    </script>
+</body>
+</html>

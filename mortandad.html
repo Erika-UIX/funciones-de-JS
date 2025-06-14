@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="COVID19, pandemia, medidas sanitarias, educación">
+    <meta name="description" content="Estadísticas del Impacto del COVID en la sociedad">
+    <meta name="language" content="es">
+    <title>MORTANDAD</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/logo_icon.png" type="image/x-icon">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('La página del Estadística de Mortandad del COVID ha cargado completamente.');
+        });
+        function convertirCasos() {
+            const casosEnCientos = Number(document.getElementById('casosInput').value);
+            if (isNaN(casosEnCientos) || casosEnCientos < 0) {
+                document.getElementById('resultadoConversion').textContent = 'Por favor, introduce un número válido y no negativo.';
+                return; 
+            }
+            const casosReales = casosEnCientos * 100;
+            document.getElementById('resultadoConversion').textContent = `Esto representa aproximadamente ${casosReales.toLocaleString()} casos de COVID.`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <section class="encabezado">
+            <video src="video/video_corto0.mp4" autoplay loop muted></video>
+            <h1>
+                MORTANDAD
+            </h1>
+        </section>
+        <nav class="menu-encabezado"> 
+            <a href="index.html">Inicio</a>
+            <a href="noticias.html">Noticias</a>
+            <a class="activo" href="#">Mortandad</a>
+        </nav>
+    </header>
+    <main>
+        <section class="alerta-seccion">
+            <h2>Datos Importantes</h2>
+            <p id="parrafoAlerta">
+                La información sobre el COVID-19 evoluciona constantemente. Siempre busca fuentes confiables.
+            </p>
+        </section>  
+        <script>
+        const parrafoAlerta = document.getElementById('parrafoAlerta');
+        parrafoAlerta.addEventListener('mouseover', () => {
+            parrafoAlerta.style.color = 'red';
+        });
+        parrafoAlerta.addEventListener('mouseout', () => {
+            parrafoAlerta.style.color = '#333'; 
+        });
+        </script>      
+        <section>
+            <h2>
+                Mortandad por COVID-19
+            </h2>
+            <p>
+                La pandemia de COVID-19 ha causado una pérdida
+                de vidas sin precedentes en todo el mundo.
+            </p>
+            <p>
+                Desde su inicio, millones de personas han sucumbido
+                al virus, y las cifras continúan aumentando.
+                Las estadísticas de mortandad son un recordatorio
+                doloroso del impacto devastador de la pandemia.
+            </p>
+        </section>
+        <section class="interactivo-conversion">
+            <h2>Calculadora de Escala de Casos</h2>
+            <p>Ingresa un valor para estimar el impacto en una escala de 100 casos por unidad:</p>
+            <input type="number" id="casosInput" placeholder="Ej: 5 (para 500 casos)">
+            <button onclick="convertirCasos()">Calcular Casos</button>
+            <p id="resultadoConversion"></p>
+        </section>
+        <section>    
+            <img src="img/estadistica-covid-2025.png" alt="Impacto mundial Covid en 2025">
+            <p>
+                Las tasas de mortalidad varían según la región,
+                la edad y las condiciones de salud preexistentes.
+                Los datos muestran que los grupos más vulnerables,
+                como los ancianos y aquellos con enfermedades
+                subyacentes, han sido los más afectados.
+            </p>            
+        </section>
+        <video controls width="100%">
+            <source src="video/video_corto3.mp4" type="video/mp4">
+            Tu navegador no soporta el vídeo. 
+        </video>
+
+    </main>
+    <footer>
+        <nav> 
+            <a href="index.html">Inicio</a>
+            <a href="noticias.html">Noticias</a>
+            <a class="activo" href="#">Mortandad</a>
+        </nav>
+        <section>
+            <h2>ALGUNAS RECOMENDACIONES:</h2>
+            <button id="toggleRecomendaciones">Ocultar Recomendaciones</button>
+            <img src="img/coronavirus_recomendaciones.png" alt="Recomendaciones del sitio.">            
+        </section>
+        <p>
+            &copy; 2025 COVID-19 y su impacto en la sociedad. Todos los derechos reservados.
+        </p>
+    </footer>
+    <script>
+        const imagenRecomendaciones = document.querySelector('footer section img');
+        const botonToggle = document.getElementById('toggleRecomendaciones');
+
+        botonToggle.addEventListener('click', () => {
+            if (imagenRecomendaciones.style.display === 'none') {
+                imagenRecomendaciones.style.display = 'block'; 
+                botonToggle.textContent = 'Ocultar Recomendaciones';
+            } else {
+                imagenRecomendaciones.style.display = 'none'; 
+                botonToggle.textContent = 'Mostrar Recomendaciones';
+            }
+        });        
+    </script>
+</body>
+</html>

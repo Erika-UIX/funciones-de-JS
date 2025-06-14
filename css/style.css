@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.encabezado {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.encabezado video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.encabezado h1 {
+    position: relative;
+    padding: 100px 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.menu-encabezado {
+    background-color: #222;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-encabezado a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu-encabezado a:hover,
+.menu-encabezado .activo {
+    color: #ffd700;
+}
+
+main {
+    padding: 20px;
+    background-color: white;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+main p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+main video {
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+
+main img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.noticias {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: rgb(20, 146, 206);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer nav {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+footer nav .activo {
+    color: rgb(255, 215, 0);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+footer section {
+    margin: 20px 0;
+}
+
+footer img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+.interactivo-conversion {
+    background-color: #e9f5ff; 
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.interactivo-conversion h2 {
+    color: #0056b3;
+    margin-bottom: 15px;
+}
+
+.interactivo-conversion input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 150px;
+}
+
+.interactivo-conversion button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.interactivo-conversion button:hover {
+    background-color: #0056b3;
+}
+
+#resultadoConversion {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.alerta-seccion {
+    background-color: #fff3cd; 
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    border: 1px solid #ffeeba;
+    text-align: center;
+}
+
+.alerta-seccion h2 {
+    color: #856404; 
+    margin-bottom: 10px;
+}
+
+#parrafoAlerta {
+    cursor: help; 
+    transition: color 0.3s ease; 
+}
+
+footer section button {
+    background-color: #7fe4ed; 
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+footer section button:hover {
+    background-color: #0068c4; 
+}
+
+.datos-dinamicos {
+    background-color: #e6f7ff; 
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.datos-dinamicos h2, .datos-dinamicos h3 {
+    color: #0078bd; 
+    margin-bottom: 10px;
+}
+
+.datos-dinamicos ul {
+    list-style-type: disc; 
+    margin-left: 20px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.datos-dinamicos button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.datos-dinamicos button:hover:not(:disabled) { 
+    background-color: #0056b3;
+}
+
+.datos-dinamicos button:disabled { 
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+footer section {
+    position: relative; 
+    padding-bottom: 20px; 
+}
